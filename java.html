@@ -10,50 +10,102 @@
 <script>
     var mov = 0;
     var winner = 0;
-    var breaks = document.write("<br>");
+    
     function displayRock()
     {
-        var text1 = document.createTextNode("   _______");
-        var text2 = document.createTextNode("---'   ____)");
-        var text3 = document.createTextNode("      (_____)");
-        var text4 = document.createTextNode("      (_____)");
-        var text5 = document.createTextNode("      (_____)");
-        var text6 = document.createTextNode("---.__(___)");
+        var breaks = document.createElement("P");
+        var text1 = document.createTextNode("      _ _ _ _ _ _ _ ");
+        var text2 = document.createTextNode("---'..........._ _ _ _ ) ");
+        var text3 = document.createTextNode("...........( _ _ _ _ _ ) ");
+        var text4 = document.createTextNode("...........( _ _ _ _ _ ) ");
+        var text5 = document.createTextNode("...........( _ _ _ _ _ )");
+        var text6 = document.createTextNode(" - - - . _ _ ( _ _ _ )  ");
         var text7 = document.createTextNode("The computer chooses rock \n");
-        document.body.appendChild(text1);
-        document.write("<br>");
-        document.body.appendChild(text2);
-        document.write("<br>");
-        document.body.appendChild(text3);
-        document.write("<br>");
-        document.body.appendChild(text4);
-        document.write("<br>");
-        document.body.appendChild(text5);
-        document.write("<br>");
-        document.body.appendChild(text6);
-        document.write("<br>");
-        document.body.appendChild(text7);
-        document.write("<br>");
+        breaks.appendChild(text1);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text2);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text3);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text4);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text5);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text6);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text7);
+        document.body.appendChild(breaks);
+
 
         
     }
     function displayScissors()
     {
-        var textnode = document.createElement("text");
-        var text1 = document.createTextNode("   _______\n---'   ____)____\n          ______)\n          _______)\n         _______)\n---.__________)\n");
-        var text2 = document.createTextNode("The computer chooses scissors \n");
-        textnode.appendChild(text1);
-        textnode.appendChild(text2);
-        document.body.appendChild(textnode);
+        var breaks = document.createElement("P");
+        var text1 = document.createTextNode(".   _______");
+        var text2 = document.createTextNode("---'..............____)____");
+        var text3 = document.createTextNode("....................______)");
+        var text4 = document.createTextNode("...................._______)");
+        var text5 = document.createTextNode("........_______)");
+        var text6 = document.createTextNode("---.__________)");
+        var text7 = document.createTextNode("The computer chooses scissors \n");
+        breaks.appendChild(text1);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text2);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text3);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text4);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text5);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text6);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text7);
+        document.body.appendChild(breaks);
     }
     function displayPaper()
     {
-        var textnode = document.createElement("text");
-        var text1 = document.createTextNode("    _______\n---'   ____)____\n          ______)\n       __________)\n      (____)\n---.__(___)\n");
-        var text2 = document.createTextNode("The computer chooses paper \n");
-        textnode.appendChild(text1);
-        textnode.appendChild(text2);
-        document.body.appendChild(textnode);
+        var breaks = document.createElement("P");
+        var text1 = document.createTextNode(".    _______");
+        var text2 = document.createTextNode("---'   ____)____");
+        var text3 = document.createTextNode("---'   ____)____");
+        var text4 = document.createTextNode("...................._______)");
+        var text5 = document.createTextNode("--.__(___)");
+        var text6 = document.createTextNode("---.__________)");
+        var text7 = document.createTextNode("The computer chooses paper \n");
+        breaks.appendChild(text1);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text2);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text3);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text4);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text5);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text6);
+        document.body.appendChild(breaks);
+        var breaks = document.createElement("P");
+        breaks.appendChild(text7);
+        document.body.appendChild(breaks);
     }
     function determineWin(player, comp)
     {
@@ -114,17 +166,17 @@
     }
     function scissors()
     {
-        determineWin(1, mov);
         displayComp(mov);
+        determineWin(1, mov);
     }
     function rock()
     {
-        determineWin(0, mov);
         displayComp(mov);
+        determineWin(0, mov);
     }
     function paper()
     {
-        determineWin(2, mov);
         displayComp(mov);
+        determineWin(2, mov);
     }
 </script>
