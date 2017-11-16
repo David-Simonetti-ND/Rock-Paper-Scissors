@@ -10,7 +10,7 @@
 <script>
     var mov = 0;
     var winner = 0;
-    var breaks = document.createElement("<br>");
+    var breaks = document.write("<br>");
     function displayRock()
     {
         var text1 = document.createTextNode("   _______");
@@ -21,19 +21,19 @@
         var text6 = document.createTextNode("---.__(___)");
         var text7 = document.createTextNode("The computer chooses rock \n");
         document.body.appendChild(text1);
-        document.body.appendChild(breaks);
+        document.write("<br>");
         document.body.appendChild(text2);
-        document.body.appendChild(breaks);
+        document.write("<br>");
         document.body.appendChild(text3);
-        document.body.appendChild(breaks);
+        document.write("<br>");
         document.body.appendChild(text4);
-        document.body.appendChild(breaks);
+        document.write("<br>");
         document.body.appendChild(text5);
-        document.body.appendChild(breaks);
+        document.write("<br>");
         document.body.appendChild(text6);
-        document.body.appendChild(breaks);
+        document.write("<br>");
         document.body.appendChild(text7);
-        document.body.appendChild(breaks);
+        document.write("<br>");
 
         
     }
