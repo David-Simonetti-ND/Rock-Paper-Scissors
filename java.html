@@ -8,16 +8,34 @@
     Paper
 </button>
 <script>
-    var move = 0;
+    var mov = 0;
     var winner = 0;
+    var breaks = document.createElement("<br>");
     function displayRock()
     {
-        var textnode = document.createElement("text");
-        var text1 = document.createTextNode("   _______ \n---'   ____)\n      (_____)\n      (_____)\n      (____)\n---.__(___)\n");
-        var text2 = document.createTextNode("The computer chooses rock \n");
-        textnode.appendChild(text1);
-        textnode.appendChild(text2);
-        document.body.appendChild(textnode);
+        var text1 = document.createTextNode("   _______");
+        var text2 = document.createTextNode("---'   ____)");
+        var text3 = document.createTextNode("      (_____)");
+        var text4 = document.createTextNode("      (_____)");
+        var text5 = document.createTextNode("      (_____)");
+        var text6 = document.createTextNode("---.__(___)");
+        var text7 = document.createTextNode("The computer chooses rock \n");
+        document.body.appendChild(text1);
+        document.body.appendChild(breaks);
+        document.body.appendChild(text2);
+        document.body.appendChild(breaks);
+        document.body.appendChild(text3);
+        document.body.appendChild(breaks);
+        document.body.appendChild(text4);
+        document.body.appendChild(breaks);
+        document.body.appendChild(text5);
+        document.body.appendChild(breaks);
+        document.body.appendChild(text6);
+        document.body.appendChild(breaks);
+        document.body.appendChild(text7);
+        document.body.appendChild(breaks);
+
+        
     }
     function displayScissors()
     {
@@ -37,59 +55,76 @@
         textnode.appendChild(text2);
         document.body.appendChild(textnode);
     }
-    function determineWin(player, mov)
+    function determineWin(player, comp)
     {
         var textnode = document.createElement("text");
-        if (player - mov == 0)
+        if (player - comp == 0)
         {
-            var text = document.createTextNode("Tie");
+            var text = document.createTextNode("Tie\n");
             mov = 1;
         }
         if (player == 0 && comp == 1)
         {   
-            var text = document.createTextNode("Human Wins");
+            var text = document.createTextNode("Human Wins\n");
             mov = 2;
         }
         if (player == 1 && comp == 2)
         {
-            var text = document.createTextNode("Human Wins");
+            var text = document.createTextNode("Human Wins\n");
             mov = 0;
         }
         if (player == 2 && comp == 0)
         {
-            var text = document.createTextNode("Human Wins");
+            var text = document.createTextNode("Human Wins\n");
             mov = 1;
         }
 
         if (player == 1 && comp == 0)
         {
-            var text = document.createTextNode("Computer Wins");
+            var text = document.createTextNode("Computer Wins\n");
             mov = 2;
         }
         if (player == 2 && comp == 1)
         {
-            var text = document.createTextNode("Computer Wins");
+            var text = document.createTextNode("Computer Wins\n");
             mov = 1;
         }
         if (player == 0 && comp == 2)
         {
-            var text = document.createTextNode("Computer Wins");
+            var text = document.createTextNode("Computer Wins\n");
             mov = 0;
         }
         textnode.appendChild(text);
         document.body.appendChild(textnode);
         }
-
+    function displayComp(rar)
+    {
+        if (rar == 0)
+        {
+            displayRock();
+        }
+        if (rar == 1)
+        {
+            displayScissors();
+        }
+        if (rar == 2)
+        {
+            displayPaper();
+        }
+    }
     function scissors()
     {
-        determineWin(1, move);
+        determineWin(1, mov);
+        displayComp(mov);
     }
     function rock()
     {
-        determineWin(0, move);
+        determineWin(0, mov);
+        displayComp(mov);
     }
     function paper()
     {
-        determineWin(2, move);
+        determineWin(2, mov);
+        displayComp(mov);
     }
 </script>
