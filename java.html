@@ -1,0 +1,95 @@
+<button type "button" onclick = "scissors()">
+    Scissors
+</button>
+<button type "button" onclick = "rock()">
+    Rock
+</button>
+<button type "button" onclick = "paper()">
+    Paper
+</button>
+<script>
+    var move = 0;
+    var winner = 0;
+    function displayRock()
+    {
+        var textnode = document.createElement("text");
+        var text1 = document.createTextNode("   _______ \n---'   ____)\n      (_____)\n      (_____)\n      (____)\n---.__(___)\n");
+        var text2 = document.createTextNode("The computer chooses rock \n");
+        textnode.appendChild(text1);
+        textnode.appendChild(text2);
+        document.body.appendChild(textnode);
+    }
+    function displayScissors()
+    {
+        var textnode = document.createElement("text");
+        var text1 = document.createTextNode("   _______\n---'   ____)____\n          ______)\n          _______)\n         _______)\n---.__________)\n");
+        var text2 = document.createTextNode("The computer chooses scissors \n");
+        textnode.appendChild(text1);
+        textnode.appendChild(text2);
+        document.body.appendChild(textnode);
+    }
+    function displayPaper()
+    {
+        var textnode = document.createElement("text");
+        var text1 = document.createTextNode("    _______\n---'   ____)____\n          ______)\n       __________)\n      (____)\n---.__(___)\n");
+        var text2 = document.createTextNode("The computer chooses paper \n");
+        textnode.appendChild(text1);
+        textnode.appendChild(text2);
+        document.body.appendChild(textnode);
+    }
+    function determineWin(play, mov)
+    {
+        var textnode = document.createElement("text");
+        if (player - mov == 0)
+        {
+            var text = document.createTextNode("Tie");
+            mov = 1;
+        }
+        if (player == 0 && comp == 1)
+        {   
+            var text = document.createTextNode("Human Wins");
+            mov = 2;
+        }
+        if (player == 1 && comp == 2)
+        {
+            var text = document.createTextNode("Human Wins");
+            mov = 0;
+        }
+        if (player == 2 && comp == 0)
+        {
+            var text = document.createTextNode("Human Wins");
+            mov = 1;
+        }
+
+        if (player == 1 && comp == 0)
+        {
+            var text = document.createTextNode("Computer Wins");
+            mov = 2;
+        }
+        if (player == 2 && comp == 1)
+        {
+            var text = document.createTextNode("Computer Wins");
+            mov = 1;
+        }
+        if (player == 0 && comp == 2)
+        {
+            var text = document.createTextNode("Computer Wins");
+            mov = 0;
+        }
+        textnode.appendChild(text);
+        document.body.appendChild(textnode);
+        }
+
+    function scissors()
+    {
+        determineWin(1, move);
+    }
+    function rock()
+    {
+        determineWin(0, move);
+    }
+    function paper()
+    {
+        determineWin(2, move);
+    }
+</script>
